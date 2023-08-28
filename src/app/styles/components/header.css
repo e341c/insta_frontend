@@ -1,0 +1,27 @@
+header{
+    border-bottom: 1px black solid;
+}
+.header{
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+.header-search{
+    margin-left: 15%;
+    border: 1.5px rgba(0, 0, 0, 0.5) solid;
+    border-radius: 8px;
+    padding: 6px 0 6px 80px;
+    display: flex;
+}
+.header-search input{
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+.search-icon{
+    display: block;
+    width: 18px;
+    height: 18px;
+}

@@ -1,0 +1,18 @@
+
+
+@import url('./styles/components/card.css');
+@import url('./styles/profile.css');
+@import url('./styles/components/button.css');
+@import url('./styles/components/flex.css');
+@import url('./styles/components/margin.css');
+@import url('./styles/components/posts.css');
+@import url('./styles/components/header.css');
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+*{
+    margin: 0
+}

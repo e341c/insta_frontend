@@ -1,0 +1,10 @@
+.profile-info{
+    display: flex;
+    justify-content: center;
+}
+.profile-posts{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

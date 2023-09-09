@@ -14,3 +14,18 @@
 .btn-opacity{
     opacity: 0.7;
 }
+
+.btn-sized{
+    max-width: 200px;
+}
+
+.btn-text{
+    color: #0095F6;
+}
+
+.btn-none{
+    outline: none;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}

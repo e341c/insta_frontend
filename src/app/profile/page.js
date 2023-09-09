@@ -1,11 +1,53 @@
 import Image from "next/image";
 import ava from "@/app/images/ava.png";
 import Posts from "@/components/posts/posts";
-import Post from "@/components/posts/post";
 import Header from "@/components/header";
 
 export default function Profile() {
-    const arrPosts = [1, 2, 3, 4, 5, 6];
+    const arrPosts = [
+        {
+            id: 1,
+            url: "post1.png",
+            likes: 173,
+            views: 450,
+            comments: 87
+        },
+        {
+            id: 2,
+            url: "post2.png",
+            likes: 1733,
+            views: 4520,
+            comments: 827
+        },
+        {
+            id: 3,
+            url: "post3.png",
+            likes: 1733,
+            views: 4520,
+            comments: 87
+        },
+        {
+            id: 4,
+            url: "post4.png",
+            likes: 173,
+            views: 450,
+            comments: 87
+        },
+        {
+            id: 5,
+            url: "post5.png",
+            likes: 2173,
+            views: 4250,
+            comments: 837
+        },
+        {
+            id: 6,
+            url: "post6.png",
+            likes: 1744,
+            views: 4540,
+            comments: 847
+        },
+    ];
 
     return (
         <main>

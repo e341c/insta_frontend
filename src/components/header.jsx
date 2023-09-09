@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/app/images/logo.png";
@@ -8,10 +9,15 @@ import newPosts from "@/app/images/NewPosts.svg"
 import activity from "@/app/images/ActivityFeed.svg"
 import profilePic from "@/app/images/profile-pic.png"
 import search from "@/app/images/search.svg"
+import { useState } from "react";
+import Modal from "./modal/modal";
 
 export default function Header() {
+    const [modal, setModal] = useState(false)
+
     return (
         <header>
+            {modal && <Modal onClose={() => setModal(false)}/>}
             <div className="container row header">
                 <div>
                     <Image src={logo} />
@@ -19,7 +25,6 @@ export default function Header() {
                 <div className="header-search">
                     <Image className="search-icon" src={search} />
                     <input type="text" placeholder="Search"/>
-                    
                 </div>
                 <div className="icons">
                     <Link className="mx-2" href={"#"}>
@@ -28,9 +33,9 @@ export default function Header() {
                     <Link className="mx-2" href={"#"}>
                         <Image src={messenger} />
                     </Link>
-                    <Link className="mx-2" href={"#"}>
+                    <button className="mx-2 btn-none" onClick={() => setModal(true)}>
                         <Image src={newPosts} />
-                    </Link>
+                    </button>
                     <Link className="mx-2" href={"#"}>
                         <Image src={findPeople} />
                     </Link>

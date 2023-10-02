@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import arrowLeft from "@/app/images/arrow-left-solid.svg";
 import Image from "next/image";
 
-export default function Modal({onClose}) {
+export default function AddPost({onClose}) {
     const inputRef = useRef(null);
     const ref = useRef();
     const [file, setFile] = useState(null);
@@ -42,15 +42,16 @@ export default function Modal({onClose}) {
             <div className="modal" ref={ref}>
                 <div className="modal-top">
                     {file && (
-                        <Image
+                        <button className="btn-none" onClick={handleClearFile}>
+                              <Image
                             src={arrowLeft}
-                            onClick={handleClearFile}
                             className="modal-icon"
                             alt=""
-                        />
+                            />
+                        </button>
                     )}
                     <p>Create new post</p>
-                    {file && <p className="btn-text">Share</p>}
+                    {file && <button className="btn-text btn-none">Share</button>}
                 </div>
                 <div className="modal-main">
                     {file && (
@@ -70,7 +71,7 @@ export default function Modal({onClose}) {
                         </div>
                     )}
                     {!file && (
-                        <div>
+                        <div className="modal-addfile">
                             <p className="mb-3">Drag photos and videos here</p>
                             <div>
                                 <input

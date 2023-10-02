@@ -8,3 +8,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
+.profile-img{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background: blue;
+}

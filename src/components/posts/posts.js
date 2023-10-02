@@ -1,8 +1,8 @@
-import Post from "./post"
+import Post from "./Post"
 
 export default function Posts({posts}) {
 
-    const showPosts = posts.map(item => (<Post item={item} />))
+    const showPosts = posts.map(item => (<Post data={item} />))
 
     return (
         <div className="profile-posts">

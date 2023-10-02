@@ -1,10 +1,15 @@
 header{
     border-bottom: 1px black solid;
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 2;
 }
 .header{
     justify-content: space-between;
     align-items: center;
     padding: 20px 0px;
+    
 }
 .header-search{
     margin-left: 15%;

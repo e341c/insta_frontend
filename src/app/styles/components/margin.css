@@ -46,3 +46,27 @@
 .mx-5{
     margin: 0 6rem;
 }
+
+.m-0{
+    margin: 0px;
+}
+
+.me-1{
+    margin-right: 0.25rem ;
+}
+.me-2{
+    margin-right: 0.75rem ;
+}
+.me-3{
+    margin-right: 1.5rem ;
+}
+.me-4{
+    margin-right: 3rem ;
+}
+.me-5{
+    margin-right: 6rem ;
+}
+
+.ms-auto{
+    margin-right: auto;
+}

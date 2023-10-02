@@ -1,9 +1,13 @@
+'use client'
 import Image from "next/image";
 import ava from "@/app/images/ava.png";
-import Posts from "@/components/posts/posts";
-import Header from "@/components/header";
+import Posts from "@/components/Posts/Posts";
+import Header from "@/components/Header";
+import Folowers from "@/components/Followers/Followers";
+import { useState } from "react";
 
 export default function Profile() {
+    const [followersModal, setFollowersModal] = useState(false)
     const arrPosts = [
         {
             id: 1,
@@ -51,7 +55,7 @@ export default function Profile() {
 
     return (
         <main>
-            <Header />
+            {followersModal && <Folowers getFollowersModal={(result) => setFollowersModal(result)} />}
             <div className="container">
                 <div className="profile-info mt-5 mb-4">
                     <Image src={ava} />
@@ -64,9 +68,11 @@ export default function Profile() {
                             <p className="mx-3">
                                 <strong>1,258</strong>&nbsp;posts
                             </p>
-                            <p className="mx-3">
-                                <strong>4M</strong>&nbsp;followers
-                            </p>
+                            <button className="mx-3 btn-none" onClick={() => setFollowersModal(true)}>
+                                <p className="text-medium">
+                                    <strong>4M</strong>&nbsp;followers
+                                </p>
+                            </button>
                             <p className="mx-3">
                                 <strong>1,250</strong>&nbsp;following
                             </p>

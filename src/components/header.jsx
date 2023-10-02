@@ -10,14 +10,14 @@ import activity from "@/app/images/ActivityFeed.svg"
 import profilePic from "@/app/images/profile-pic.png"
 import search from "@/app/images/search.svg"
 import { useState } from "react";
-import Modal from "./modal/modal";
+import AddPost from "./AddPost/AddPost";
 
 export default function Header() {
     const [modal, setModal] = useState(false)
 
     return (
         <header>
-            {modal && <Modal onClose={() => setModal(false)}/>}
+            {modal && <AddPost onClose={() => setModal(false)}/>}
             <div className="container row header">
                 <div>
                     <Image src={logo} />
@@ -42,7 +42,7 @@ export default function Header() {
                     <Link className="mx-2" href={"#"}>
                         <Image src={activity} />
                     </Link>
-                    <Link className="mx-2" href={"#"}>
+                    <Link className="mx-2" href={"/profile"}>
                         <Image src={profilePic} />
                     </Link>
                 </div>

@@ -1,9 +1,10 @@
 header{
-    border-bottom: 1px black solid;
+    border-bottom:1px solid #DBDBDB;
     position: fixed;
     width: 100%;
     background: white;
     z-index: 2;
+    top: 0;
 }
 .header{
     justify-content: space-between;
@@ -13,7 +14,7 @@ header{
 }
 .header-search{
     margin-left: 15%;
-    border: 1.5px rgba(0, 0, 0, 0.5) solid;
+    border: 1px solid #DBDBDB;
     border-radius: 8px;
     padding: 6px 0 6px 80px;
     display: flex;
@@ -29,4 +30,8 @@ header{
     display: block;
     width: 18px;
     height: 18px;
+}
+.icons{
+    display: flex;
+    align-items: center;
 }

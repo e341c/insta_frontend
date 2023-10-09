@@ -20,7 +20,7 @@
     width: 100%;
     padding: 10px;
     justify-content: space-between;
-    border-bottom:  1px solid rgba(69, 69, 69, 0.3);
+    border-bottom:  1px solid #DBDBDB;
 }
 .modal-top p{
     font-size: 13px;
@@ -28,7 +28,6 @@
 .modal-main{
     height: 100%;
     width: 100%;
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +68,7 @@
 .modal-img{
     height: 400px;
     width: 400px;
-    border-right: 1px solid rgba(69, 69, 69, 0.3);
+    border-right: 1px solid #DBDBDB;
 }
 .modal-img img{
     width: 100%;
@@ -99,15 +98,15 @@
 }
 
 .modal-left img{
-    width: 400px;
-    height: 400px;
+    width: auto;
+    height: 80vh;
     object-fit: cover;
 }
 
 .modal-right{
-    height: 400px;
+    height: 80vh;
     width: 400px;
-    border-left: 1px solid rgba(69, 69, 69, 0.3);
+    border-left: 1px solid #DBDBDB;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

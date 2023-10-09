@@ -2,11 +2,16 @@
 import { useState, useRef, useEffect } from "react";
 import arrowLeft from "@/app/images/arrow-left-solid.svg";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { createPost } from "@/app/store/slices/postSlice";
 
 export default function AddPost({onClose}) {
     const inputRef = useRef(null);
     const ref = useRef();
     const [file, setFile] = useState(null);
+    const [desc, setDesc] = useState('')
+
+    const dispatch = useDispatch()
 
     const handleFileChange = (e) => {
         const files = e.target.files;
@@ -17,6 +22,9 @@ export default function AddPost({onClose}) {
         }
     };
 
+    console.log(file);
+    console.log(desc);
+
     const handleButtonClick = () => {
         inputRef.current?.click();
     };
@@ -24,6 +32,14 @@ export default function AddPost({onClose}) {
     const handleClearFile = () => {
         setFile(null);
     };
+
+    const handleSubmit = (e) => {
+        const formData = new FormData()
+        formData.append("image", file)
+        formData.append("description", desc)
+
+        dispatch(createPost(formData))
+    }
 
     useEffect(() => {
         const checkIfClickedOutside = (e) => {
@@ -51,7 +67,7 @@ export default function AddPost({onClose}) {
                         </button>
                     )}
                     <p>Create new post</p>
-                    {file && <button className="btn-text btn-none">Share</button>}
+                    {file && <button onClick={handleSubmit} className="btn-text btn-none">Share</button>}
                 </div>
                 <div className="modal-main">
                     {file && (
@@ -65,6 +81,8 @@ export default function AddPost({onClose}) {
                                     name=""
                                     id=""
                                     rows="8"
+                                    value={desc}
+                                    onChange={(e) => setDesc(e.target.value)}
                                     placeholder="Write a caption"
                                 ></textarea>
                             </div>

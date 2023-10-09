@@ -60,7 +60,7 @@ export default function Home() {
                     </div>
                     <div>
                         {arrPosts.map((item) => (
-                            <HomePost data={item} />
+                            <HomePost data={item} key={item.id} />
                         ))}
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import Posts from "@/components/Posts/Posts";
 import Header from "@/components/Header";
 import Folowers from "@/components/Followers/Followers";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Profile() {
     const [followersModal, setFollowersModal] = useState(false)
@@ -53,15 +54,18 @@ export default function Profile() {
         },
     ];
 
+    const currentUser = useSelector((state) => state.auth.currentUser)
+    console.log(currentUser);
+
     return (
         <main>
             {followersModal && <Folowers getFollowersModal={(result) => setFollowersModal(result)} />}
             <div className="container">
                 <div className="profile-info mt-5 mb-4">
-                    <Image src={ava} />
+                    <Image src={ava} alt="avatar" />
                     <div className="profile-text">
                         <div className="row align-center mb-3">
-                            <h2 className="mx-3">terrylucas</h2>
+                            <h2 className="mx-3">{currentUser?.username}</h2>
                             <button className="btn">Follow</button>
                         </div>
                         <div className="row mb-3">
@@ -78,7 +82,7 @@ export default function Profile() {
                             </p>
                         </div>
                         <div>
-                            <p className="mx-3">Terry Lucas</p>
+                            <p className="mx-3">{currentUser?.full_name}</p>
                         </div>
                     </div>
                 </div>

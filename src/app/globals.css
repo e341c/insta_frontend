@@ -13,7 +13,7 @@
 @import url('./styles/stories.css');
 @import url('./styles/components/text.css');
 @import url('./styles/home-suggestions.css');
-
+@import url('./styles/components/picture.css');
 
 
 .container{
@@ -22,5 +22,7 @@
 }
 
 *{
-    margin: 0
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
